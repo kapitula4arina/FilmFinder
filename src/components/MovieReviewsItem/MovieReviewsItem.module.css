@@ -1,0 +1,13 @@
+.reviewMore {
+  border: none;
+  font-size: 20px;
+  color: #ce5153;
+  transition: color 0.25s;
+}
+.reviewMore:hover {
+  color: #a5383a;
+}
+
+.author {
+  text-decoration: underline;
+}

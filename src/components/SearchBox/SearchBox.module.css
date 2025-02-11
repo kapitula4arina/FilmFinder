@@ -1,0 +1,34 @@
+.searchForm {
+  margin-bottom: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+}
+
+.searchInput {
+  background-color: transparent;
+  border: 1px solid #ce5153;
+  padding: 10px 15px;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 20px;
+  outline: none;
+  border-radius: 5px;
+  margin-right: 10px;
+  caret-color: #ce5153;
+
+  min-width: 150px;
+  max-width: 300px;
+}
+
+.searchBtn {
+  font-size: 20px;
+  padding: 10px;
+  transition: color 0.25s, border-color 0.25s;
+  white-space: nowrap;
+}
+.searchBtn:hover {
+  color: #a5383a;
+  border-color: #a5383a;
+}

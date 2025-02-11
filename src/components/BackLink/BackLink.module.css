@@ -1,0 +1,13 @@
+.goBack {
+  padding: 5px 10px;
+  border: 1px solid #ce5153;
+  border-radius: 5px;
+  width: 100px;
+  text-align: center;
+
+  transition: border 0.25s;
+}
+
+.goBack:hover {
+  border: 1px solid #a5383a;
+}

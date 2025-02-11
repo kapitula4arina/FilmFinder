@@ -1,0 +1,15 @@
+.notFound {
+  margin-top: 40px;
+  padding: 0 20px;
+  font-size: 20px;
+}
+
+.notFoundText {
+  font-size: 30px;
+  text-align: center;
+  display: flex;
+  height: 50vh;
+  justify-content: center;
+  align-items: center;
+  color: rgba(255, 255, 255, 0.6);
+}
