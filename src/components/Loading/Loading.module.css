@@ -1,12 +1,30 @@
 .loading {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   width: 100%;
-  margin-top: 20px;
+  margin-top: 60px;
 }
 
 .loadText {
-  font-size: 40px;
+  font-size: 28px;
   color: #e3d6d6;
+  margin-top: 20px;
+  letter-spacing: 1px;
+}
+
+.spinner {
+  font-size: 60px;
+  color: #a5383a;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }

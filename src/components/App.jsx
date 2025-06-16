@@ -1,5 +1,5 @@
 import { Route, Routes } from 'react-router-dom';
-import Navigation from './Navigation/Navigation';
+import Header from './Header/Header';
 import React, { Suspense } from 'react';
 import Loading from './Loading/Loading';
 
@@ -19,7 +19,7 @@ const NotFoundPage = React.lazy(() =>
 function App() {
   return (
     <>
-      <Navigation />
+      <Header />
       <Suspense fallback={<Loading></Loading>}>
         <Routes>
           <Route path="/" element={<HomePage />} />

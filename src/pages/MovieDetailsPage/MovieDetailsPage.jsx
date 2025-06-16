@@ -7,43 +7,38 @@ import BackLink from '../../components/BackLink/BackLink';
 import MovieItemDescription from '../../components/MovieItemDescription/MovieItemDescription';
 import Loading from '../../components/Loading/Loading';
 
-const buildLinkClass = ({ isActive }) => {
-  return clsx(css.link, isActive && css.active);
-};
+const buildLinkClass = ({ isActive }) => clsx(css.link, isActive && css.active);
 
 const MovieDetailsPage = () => {
   const { movieId } = useParams();
   const [movie, setMovie] = useState(null);
-
   const location = useLocation();
   const backLink = useRef(location.state?.from ?? '/movies');
 
   useEffect(() => {
     if (!movieId) return;
 
-    if (movieId) {
-      window.scrollTo(0, 0);
-    }
+    window.scrollTo(0, 0);
     const fetchMovieDetails = async () => {
       try {
         const data = await getMovieDetails(movieId);
         setMovie(data);
       } catch (error) {
-        console.log(error);
+        console.error(error);
       }
     };
 
     fetchMovieDetails();
   }, [movieId]);
 
-  if (!movie) return <Loading></Loading>;
+  if (!movie) return <Loading />;
+
   return (
     <main>
       <div className={css.movieDetailes}>
         <div className={css.detailes}>
           <BackLink to={backLink.current}>Go Back</BackLink>
-
-          <MovieItemDescription data={movie}></MovieItemDescription>
+          <MovieItemDescription data={movie} />
         </div>
         <ul className={css.linkList}>
           <li className={css.linkListItem}>
@@ -51,13 +46,12 @@ const MovieDetailsPage = () => {
               Cast
             </NavLink>
           </li>
-          <li>
+          <li className={css.linkListItem}>
             <NavLink to="reviews" className={buildLinkClass}>
               Reviews
             </NavLink>
           </li>
         </ul>
-
         <Outlet />
       </div>
     </main>
